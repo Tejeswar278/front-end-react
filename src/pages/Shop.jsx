@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Text } from '@chakra-ui/react';
 import { Filter } from "../components/Filter";
 import { Product } from "../components/product";
+import { Grid} from '@chakra-ui/react'
 
 
 export const Shop = () => {
@@ -26,11 +27,11 @@ export const Shop = () => {
                 <h1>Entities loading...</h1>
                 : error ?
                     <h2> something went wrong please try agian later</h2>
-                : <div>
+                : <Grid templateColumns='repeat(3, 1fr)' gap={6}>
                     {products.length > 0 && products.map((product) =>{
                         return <Product key={product.id} product={product}/>
                     })}
-                </div>
+                </Grid>
             }
         </div>
     )
