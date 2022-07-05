@@ -8,9 +8,9 @@ import { Grid} from '@chakra-ui/react'
 
 
 export const Shop = () => {
-    const loading = useSelector((state) => state.loading);
-    const error = useSelector((state) => state.error)
-    const products = useSelector((state) => state.products);
+    const loading = useSelector((state) => state.product.loading);
+    const error = useSelector((state) => state.product.error)
+    const products = useSelector((state) => state.product.products);
     console.log(products  )
     const dispatch = useDispatch()
     useEffect(() => {
